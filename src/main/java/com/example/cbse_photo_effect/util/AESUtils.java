@@ -6,7 +6,6 @@ import javax.crypto.spec.SecretKeySpec;
 import java.nio.charset.StandardCharsets;
 
 public class AESUtils {
-
     private static final String AES_ALGORITHM = "AES/CBC/PKCS5Padding";
 
     public static byte[] encryptAES(String plaintext, String key, String iv) throws Exception {

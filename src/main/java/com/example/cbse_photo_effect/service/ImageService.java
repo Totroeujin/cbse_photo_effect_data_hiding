@@ -18,7 +18,6 @@ public class ImageService {
     int gridCols = 32;
     int gridRows = 32;
     public String embedDataIntoImage(String data, byte[] imageBytes) throws IOException {
-
         BufferedImage image = ImageIO.read(new ByteArrayInputStream(imageBytes));
         image = resizeImage(image, nearestMultiple(gridCols, image.getWidth()),nearestMultiple(gridRows, image.getHeight()));
         List<Grid2c> grids = splitImageIntoGrids(image, gridRows, gridCols); // Example grid size
