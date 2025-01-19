@@ -15,6 +15,10 @@ public class DefaultController {
                 "2. POST /api/embed/extract - To extract data from an image.";
     }
 
+    @RequestMapping(value = "/**", method = {RequestMethod.POST, RequestMethod.GET})
+    public String handleUnknownRoutes() {
+        return "Error: The requested endpoint or method is not allowed. Please check the API documentation.";
+    }
     // Sample data embedding:
     /*
 
@@ -25,10 +29,5 @@ public class DefaultController {
     017-4533228
 
     * */
-
-    @RequestMapping(value = "/**", method = {RequestMethod.POST, RequestMethod.GET})
-    public String handleUnknownRoutes() {
-        return "Error: The requested endpoint or method is not allowed. Please check the API documentation.";
-    }
 }
 
